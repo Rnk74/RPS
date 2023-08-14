@@ -1,10 +1,7 @@
-
-
-
 /*get choice of computer between Rock, Paper, Scissors*/
 let compscore = 0
 let playscore = 0
-
+let playerchoice = "None"
 function getComputerChoice(){
     
     var choice = Math.random()
@@ -20,65 +17,95 @@ function getComputerChoice(){
 
 
 
-/*get choice of the player between Rock, Paper, Scissors
+/*get choice of the player between Rock, Paper, Scissors*/
+function choose() {
+
+const Rock = document.querySelector('.Rock');
+
+function showRockMsg() {
+  return playerchoice = "Rock", 
+  console.log(playerchoice), 
+  playRound(playerchoice)
+ }
+    
+Rock.addEventListener("click", showRockMsg);
+
+const Paper = document.querySelector('.Paper');
+
+function showPaperMsg() {
+  return playerchoice = "Paper", 
+  console.log(playerchoice), 
+  playRound(playerchoice)
+ }
+    
+Paper.addEventListener("click", showPaperMsg);
+
+const Scissors = document.querySelector('.Scissors');
+function showScissorsMsg() {
+    return playerchoice = "Scissors", 
+    console.log(playerchoice), 
+    playRound(playerchoice)
+   }
+   Scissors.addEventListener("click", showScissorsMsg);
+}
+/* 
 compare choice of the player and choice of the computer 
 return a winner between both*/
 
-function playRound() {
+function playRound(playerchoice) {
 
     let compAnswer=getComputerChoice()
-    let playerSelection = prompt("ROCK, PAPER OR SCISSORS?");
-    let capitalizedPlayerSelection = playerSelection;
-    if (capitalizedPlayerSelection === "ROCK"){ 
+
+    if (playerchoice === "Rock"){ 
         if (compAnswer === "Rock"){
-            return console.log("It's a Draw!");}
+            document.getElementById("result").innerHTML = "It's a Draw!";}
         else if (compAnswer ==="Paper"){
-            return console.log("You Lose! Paper beats Rock"),compscore++; 
+            document.getElementById("result").innerHTML = "You Lose! Paper beats Rock",compscore++; 
 }
 
         else if (compAnswer === "Scissors"){
-            return console.log("You Win! Rock beats Scissors"),playscore++; 
+            document.getElementById("result").innerHTML = "You Win! Rock beats Scissors",playscore++; 
  }}
 
-    if (capitalizedPlayerSelection === "PAPER"){ 
+    if (playerchoice === "Paper"){ 
         if (compAnswer === "Paper"){
-            return console.log("It's a Draw!");}
+            document.getElementById("result").innerHTML = "It's a Draw!";}
         else if (compAnswer === "Rock"){
-            return console.log("You Win! Paper beats Rock"),playscore++; 
+            document.getElementById("result").innerHTML = "You Win! Paper beats Rock",playscore++; 
 }
         else if (compAnswer === "Scissors"){
-            return console.log("You Lose! Scissors beats Paper"),compscore++; 
+            document.getElementById("result").innerHTML = "You Lose! Scissors beats Paper",compscore++; 
  }}
 
-    if (capitalizedPlayerSelection === "SCISSORS") {
+    if (playerchoice === "Scissors") {
         if (compAnswer === "Scissors"){
-            return console.log("It's a Draw!")}
+            document.getElementById("result").innerHTML = "It's a Draw!"}
         else if (compAnswer === "Paper"){
-            return console.log("You Win! Scissors beats Paper"),playscore++; }
+            document.getElementById("result").innerHTML = "You Win! Scissors beats Paper",playscore++; }
         else if (compAnswer === "Rock"){
-            return console.log("You Lose! Rock beats Scissors"),compscore++; }
+            document.getElementById("result").innerHTML = "You Lose! Rock beats Scissors",compscore++; }
         }
+    document.getElementById("compscore").innerHTML = "Computer score : "+ compscore;
+    document.getElementById("playscore").innerHTML = "Player score : "+ playscore;
+    if ( compscore === 5)
+        endgamecomp()
+    if ( playscore === 5)
+        endgameplay()
     }
+function endgamecomp(){
+    document.getElementById("result").innerHTML = "Game over, You loose " + compscore+ " to " + playscore+ " Select a figure to play again!";
+    compscore = 0
+    playscore = 0
+    choose()
+}   
+function endgameplay(){
+    document.getElementById("result").innerHTML = "Congratulation ! You win  " + compscore+ " to " + playscore+ " Select a figure to play again!";
+    compscore = 0
+    playscore = 0
+    choose()
+}   
+    ;
 
 
-
-  
-  
- 
-  /*make a 5 round game in that*/
-
-function game(){
-    playRound()
-    playRound()
-    playRound()
-    playRound()
-    playRound()
-    
-    console.log("Computer score :",compscore)
-    console.log("Player score :",playscore)
-}
-
-game()
-
-
+choose()
 

@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+  }
+
+.rpsButtons{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.header{
+    display: flex;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    font-size: 48px;
+    text-shadow:
+    0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px #f09,
+    0 0 80px #f09,
+    0 0 90px #f09,
+    0 0 100px #f09,
+    0 0 150px #f09;
+}
+.button {
+    color: #f09;
+    border: 1px solid #f09;
+    border-radius:15px;
+    padding: 15px 25px;
+    font-size: 30px;
+    font-family: tahoma;
+    letter-spacing:5px;
+    cursor: pointer;
+    font-weight: bold;
+    filter: drop-shadow(0 0 20px #f09) contrast(2) brightness(2);
+    transition: .5s;
+    background-color: black;
+    
+  }
+  
+  .button:hover {
+    color: #db503e;
+    filter: drop-shadow(0 0 15px #f09) drop-shadow(0 0 50px #f09) contrast(2) brightness(2);
+  }
+
+  .neonbutton{
+    justify-content: center;
+    display: flex;
+    gap:80px;
+  }
+
+  .all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    width: 700px;
+  }
+
+  .score{
+    align-items: center;    
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    color: #db503e;
+    border: 1px solid #f09;
+    border-radius:15px;
+    padding: 15px 25px;
+    font-size: 30px;
+    font-family: tahoma;
+    letter-spacing:5px;
+    font-weight: bold;
+    filter: drop-shadow(0 0 15px #f09) drop-shadow(0 0 10px #f09) contrast(2) brightness(2);
+    transition: .5s;
+    background-color: black;
+}
+#result{
+    display: flex;
+    border-bottom: #f09;
+    border-bottom-style: groove;
+    margin-bottom: 20px;
+}
